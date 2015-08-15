@@ -3,9 +3,11 @@ import os, sys
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from flask.ext.script import Manager, Server
+from flask.ext.migrate import MigrateCommand
 from flask_app import app
 
 manager = Manager(app)
+manager.add_command('db', MigrateCommand)
 
 # Instantiate the server with the required flags.
 # Turn on debugger by default and reloader
