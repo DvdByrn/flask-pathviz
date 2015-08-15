@@ -49,6 +49,11 @@ def register():
         return redirect('/success')
     return render_template('user/register.html', form=form)
 
+@app.route('/logout')
+def logout():
+    session.pop('username')
+    return redirect(url_for('index'))
+
 @app.route('/success')
 def success():
     return "User registered!"
