@@ -1,4 +1,4 @@
-from flask_app import app
+from flask_app import app, db
 from flask import render_template, redirect, session, request, url_for
 from user.form import RegisterForm, LoginForm
 from user.models import User
@@ -33,6 +33,19 @@ def login():
 def register():
     form = RegisterForm()
     if form.validate_on_submit():
+        user = User(
+            form.fullname.data,
+            form.email.data,
+            form.username.data,
+            form.password.data
+        )
+        db.session.add(user)
+        db.session.flush()
+        if user.id:
+            db.session.commit()
+        else:
+            db.session.rollback()
+            error = "Error creating user"
         return redirect('/success')
     return render_template('user/register.html', form=form)
 
