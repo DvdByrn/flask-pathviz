@@ -5,11 +5,10 @@ from flask_app import app
 import sqlalchemy
 
 try:
-	# db_uri = 'sqlite:///%s.db' % (app.config['DATABASE_NAME'])
 	db_uri = 'sqlite:///%s.db' % (app.config['DATABASE_NAME'])
 	conn = engine.connect()
 	conn.execute('commit')
-	# conn.execute("CREATE DATABASE " + app.config['DATABASE_NAME'])
+	conn.execute("CREATE DATABASE " + app.config['DATABASE_NAME'])
 	conn.close()
 except:
 	print "Database exists"
