@@ -5,4 +5,4 @@ from user.decorators import login_required
 @app.route('/map')
 @login_required
 def map():
-	return render_template('map/map.html', username=session['username'])
+	return render_template('net/map.html', username=session['username'])
