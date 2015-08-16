@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 {% block title %}Welcome{% endblock %}
 {% block content %}
-<div class="col-md-offset-3 col-md-6">
-	<p>Index Page</p>
-	<p>Welcome, {{ session['username'] }} - <a href="{{ url_for('logout') }}">Logout</a></p>
+<div class="row">
+	<div class="col-md-offset-3 col-md-6">
+		<p>Welcome, {{ session['username'] }}!</a></p>
+	</div>
 </div>
 {% endblock %}

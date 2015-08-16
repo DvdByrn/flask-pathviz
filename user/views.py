@@ -24,7 +24,7 @@ def login():
                 session.pop('next')
                 return redirect(next)
             else:
-                return redirect('login_success')
+                return redirect('index')
         else:
             error = "Incorrect username and password"
     return render_template('user/login.html', form=form, error=error)
@@ -50,8 +50,9 @@ def register():
     return render_template('user/register.html', form=form)
 
 @app.route('/logout')
-def logout():
-    session.pop('username')
+def logout():\
+    # if session['username']:
+    session.pop('username', None)
     return redirect(url_for('index'))
 
 @app.route('/success')

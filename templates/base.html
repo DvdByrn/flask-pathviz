@@ -4,45 +4,60 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{% block title %}{% endblock %}</title>
+    <title>{% block title %}{% endblock %} - Metabolic Modeling Visualizer</title>
 
     <!-- Bootstrap -->
     <link href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-
+    <link href="{{ url_for('static', filename='css/custom.css') }}" rel="stylesheet" type="text/css" >
   </head>
   <body>
-
+`
     <nav class="navbar-default navbar-static-top">
         <div class="container">
           <div class="navbar-header">
-            <img src="{{ url_for('static', filename='PT_logo.png') }}" alt="Pyramid Technology" height="40px"/>
-        <a class="navbar-brand" href="{{ url_for('index') }}">Metabolic Modeling Visualizer</a>
+            <a href="{{ url_for('index') }}" class="pull-left"><img src="{{ url_for('static', filename='images/PT_logo.png') }}" alt="Pyramid Technology" height="40px"></a>
+            <a class="navbar-brand" href="{{ url_for('index') }}">Metabolic Modeling Visualizer</a>
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
               <li><a href="{{ url_for('index') }}">Welcome</a></li>
-              </li>
             </ul>
       <ul class="nav navbar-nav navbar-right">
       {% if username %}
-        <li><div>{{ username }} - <a href="{{ url_for('logout') }}">Logout</a></div></li>
+          <p class="navbar-btn">
+            <a href="{{ url_for('logout') }}" class="btn btn-default">Log Out</a>
+          </p>
+        </li> 
+      {% else %}
+        <li>
+          <p class="navbar-btn">
+            <a href="{{ url_for('login') }}" class="btn btn-default">Log In</a>
+          </p>
+        </li>      
+        <li>
+          <p class="navbar-btn">
+            <a href="{{ url_for('register') }}" class="btn btn-default">Sign Up</a>
+          </p>
+        </li>
+       <li>
       {% endif %}
       </ul>
     </nav>
 
     <div class="container">
       {% block content %}{% endblock %}
-
-      <div class="col-md-offset-3 col-md-6">
-        <hr />
-        <footer>
-          {% block footer %}
-          &copy; Copyright 2015 by <a href="http://www.pyramidtechnology.com">Pyramid Technology</a>
-          {% endblock %}
-        </footer>
-      </div>
-
+      <hr/>
+      <footer>
+        {% block footer %}
+        <div class="text-center">
+          &copy; Copyright 2015, <a target="_blank" href="http://www.pyramidtechnology.com">Pyramid Technology</a>.
+           All rights reserved.
+        </div>
+        {% endblock %}
+      </footer>
     </div>
+
+
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="{{ url_for('static', filename='javascript/jquery-2.1.4.min.js') }}"></script>

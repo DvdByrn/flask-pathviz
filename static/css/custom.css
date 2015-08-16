@@ -1,0 +1,35 @@
+/* color of navbar */
+.navbar-default {
+    background-color: #169fda;
+    border-color: #169fda;
+}
+
+/* color of "Pyramid Technology" logo */
+.navbar-default .navbar-brand {
+    color: #ffffff;
+}
+
+/* color and position of rest of navbar links */
+.navbar-default .navbar-nav>li>a {
+    color: #ffffff;
+}
+
+/* color of "Pyramid Technology" logo when hovered over */
+.navbar-default:hover .navbar-brand:hover {
+    color: #DDDBDB;
+}
+
+/* color and position of rest of navbar links when hovered over */
+.navbar-default:hover .navbar-nav>li>a:hover {
+    color: #DDDBDB;
+}
+
+/* padding below navbar */
+body > .container {
+  padding-top: 20px;
+}
+
+/* spacing between buttons */
+.btn {
+    margin-right:10px;
+}
