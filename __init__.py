@@ -11,3 +11,4 @@ migrate = Migrate(app, db)
 
 from index import views
 from user import views
+from net import views
