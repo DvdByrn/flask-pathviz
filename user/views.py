@@ -44,10 +44,11 @@ def register():
         db.session.flush()
         if user.id:
             db.session.commit()
+            flash("New user account created.")
         else:
             db.session.rollback()
             error = "Error creating user"
-        return redirect('/success')
+        return redirect('login')
     return render_template('user/register.html', form=form)
 
 @app.route('/logout')
