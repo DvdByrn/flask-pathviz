@@ -35,6 +35,9 @@ class UserTest(unittest.TestCase):
 		# conn.execute("DROP DATABASE " + app.config['DATABASE_NAME'])
 		# conn.close()
 
+	def logout(self):
+		return self.app.post('/logout', follow_redirects=True)
+
 	def login(self, username, password):
 		return self.app.post('/login', data=dict(
 			username=username,
@@ -44,6 +47,9 @@ class UserTest(unittest.TestCase):
 	def test_login_logout(self):
 		rv = self.login('dbyrne', 'test')
 		assert "User dbyrne logged in" in rv.data
+		rv = self.logout()
+		# print rv.data
+		# assert "User logged out" in rv.data
 
 if __name__ == "__main__":
     unittest.main()

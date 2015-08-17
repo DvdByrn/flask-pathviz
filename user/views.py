@@ -51,10 +51,11 @@ def register():
     return render_template('user/register.html', form=form)
 
 @app.route('/logout')
-def logout():\
+def logout():
     # if session['username']:
-    session.pop('username', None)
-    return redirect(url_for('index'))
+    session.pop('username')
+    flash("User logged out")
+    return redirect(url_for('login'))
 
 @app.route('/success')
 def success():
