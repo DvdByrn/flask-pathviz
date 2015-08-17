@@ -35,5 +35,15 @@ class UserTest(unittest.TestCase):
 		# conn.execute("DROP DATABASE " + app.config['DATABASE_NAME'])
 		# conn.close()
 
+	def login(self, username, password):
+		return self.app.post('/login', data=dict(
+			username=username,
+			password=password
+			), follow_redirects=True)
+
+	def test_login_logout(self):
+		rv = self.login('dbyrne', 'test')
+		assert "User dbyrne logged in" in rv.data
+
 if __name__ == "__main__":
     unittest.main()
