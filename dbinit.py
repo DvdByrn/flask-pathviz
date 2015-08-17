@@ -19,7 +19,7 @@ import sqlalchemy
 
 from flask_app import db
 
-# # Add all models here
-# from user.models import *
+# Add all models here
+from user.models import *
 
-# db.create_all()
+db.create_all()
