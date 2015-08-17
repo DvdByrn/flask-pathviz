@@ -1,5 +1,5 @@
 from flask_app import app, db
-from flask import render_template, redirect, session, request, url_for
+from flask import render_template, redirect, session, request, url_for, flash
 from user.form import RegisterForm, LoginForm
 from user.models import User
 from user.decorators import login_required
@@ -19,6 +19,7 @@ def login():
         ).limit(1)
         if user.count():
             session['username'] = form.username.data
+            flash("User %s logged in" % session['username'])
             if 'next' in session:
                 next = session.get('next')
                 session.pop('next')
