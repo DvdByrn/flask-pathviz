@@ -2,12 +2,8 @@
 
 {% block title %}Map{% endblock %}
 
-{% block head %}
-{% endblock %}
-
 {% block content %}
 <div class="row">
-	{% include '_flashmessages.html' %}
 	<div id="map_container"></div>
     <select id="mb-jump-menu" onchange="redisplay_map(this.value);" class="form-control" style="display: block;">
         <optgroup label="Change map">
@@ -22,6 +18,7 @@
         // with the "Central metabolism" selection in the drop-down menu.
         // I could not set the defauld drop-down mentu in html, so I am 
         // changing the selection of the drop-down menu with javascript.
+		
         initialize_map("{{ url_for('static', filename='json_files/e_coli.iJO1366.Central_metabolism.json') }}");
         document.getElementById("mb-jump-menu").selectedIndex = 0;
 
@@ -45,4 +42,11 @@
         }
     </script>
 </div>
+{% endblock %}
+
+{% block footer %}
+	<div id="map-pt-footer">
+		&copy; Copyright 2015, <a target="_blank" href="http://www.pyramidtechnology.com">Pyramid Technology</a>.
+		All rights reserved.
+	</div>
 {% endblock %}
