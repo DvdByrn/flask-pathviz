@@ -20,6 +20,7 @@ def login():
         if user.count():
             session['username'] = form.username.data
             flash("User %s logged in" % session['username'])
+            app.logger.warning("User logged in (%s)" % request.form.get("username"))            
             if 'next' in session:
                 next = session.get('next')
                 session.pop('next')
@@ -28,6 +29,8 @@ def login():
                 return redirect('index')
         else:
             error = "Incorrect username and password"
+            app.logger.warning("Incorrect username and password (%s, %s)" %
+                (request.form.get("username"),request.form.get("password")))
     return render_template('user/login.html', form=form, error=error)
     
 @app.route('/register', methods=('GET', 'POST'))
