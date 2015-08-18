@@ -18,12 +18,6 @@
     width: 300px;
 }
 
-@media (max-width: 550px) {
-    #mb-jump-menu {
-        display: none;
-    }
-}
-
 /* Decrease the size of the top menu*/
 .escher-container .search-menu-container-inline {
     width: 80px;
