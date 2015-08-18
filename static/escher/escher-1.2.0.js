@@ -14573,11 +14573,13 @@ define('Builder',['utils', 'BuildInput', 'ZoomContainer', 'Map', 'CobraModel', '
                              { key: keys.zoom_in,
                                text: '+',
                                classes: 'simple-button',
+                               id: 'left-button-zoom-in',
                                tooltip: 'Zoom in (Ctrl +)' });
         ui.individual_button(button_panel.append('div'),
                              { key: keys.zoom_out,
                                text: '–',
                                classes: 'simple-button',
+                               id: 'left-button-zoom-out',
                                tooltip: 'Zoom out (Ctrl -)' });
         ui.individual_button(button_panel.append('div'),
                              { key: keys.extent_canvas,
