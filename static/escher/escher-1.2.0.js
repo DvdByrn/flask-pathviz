@@ -14599,15 +14599,15 @@ define('Builder',['utils', 'BuildInput', 'ZoomContainer', 'Map', 'CobraModel', '
                                    fn: load_reaction_data_for_file.bind(this),
                                    accept_csv: true,
                                    pre_fn: function() {
-                                       map.set_status('Loading reaction data ...');
+                                       map.set_status('Loading flux data ...');
                                    },
                                    failure_fn: function() {
                                        map.set_status('');
                                    }},
-                          text: 'Load reaction data',
+                          text: 'Load flux data',
                           id: 'data-menu-load-reaction-data' })
                 .button({ key: keys.clear_reaction_data,
-                          text: 'Clear reaction data',
+                          text: 'Clear flux data',
                           id: 'data-menu-clear-reaction-data' })
 
         // update the buttons
@@ -14615,7 +14615,7 @@ define('Builder',['utils', 'BuildInput', 'ZoomContainer', 'Map', 'CobraModel', '
             data_menu.dropdown.selectAll('li')
                 .classed('escher-disabled', function(d) {
                     if (!d) return null;
-                    if (d.text == 'Clear reaction data' && this.options.reaction_data === null)
+                    if (d.text == 'Clear flux data' && this.options.reaction_data === null)
                         return true;
                     return null;
                 }.bind(this));
