@@ -14604,9 +14604,11 @@ define('Builder',['utils', 'BuildInput', 'ZoomContainer', 'Map', 'CobraModel', '
                                    failure_fn: function() {
                                        map.set_status('');
                                    }},
-                          text: 'Load reaction data' })
+                          text: 'Load reaction data',
+                          id: 'data-menu-load-reaction-data' })
                 .button({ key: keys.clear_reaction_data,
-                          text: 'Clear reaction data' })
+                          text: 'Clear reaction data',
+                          id: 'data-menu-clear-reaction-data' })
 
         // update the buttons
         var disable_clears = function() {
