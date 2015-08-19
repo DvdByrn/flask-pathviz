@@ -36,7 +36,7 @@
     <nav class="navbar-default navbar-static-top">
         <div class="container">
           <div class="navbar-header">
-            <a href="{{ url_for('index') }}" class="pull-left"><img src="{{ url_for('static', filename='images/PT_logo.png') }}" alt="Pyramid Technology" height="40px"></a>
+            <a href="#" class="pull-left"><img src="{{ url_for('static', filename='images/PT_logo.png') }}" alt="Pyramid Technology" height="40px"></a>
             <a class="navbar-brand" href="{{ url_for('index') }}">Metabolic Modeling Visualizer</a>
           </div>
           <div id="navbar" class="navbar-collapse collapse">
@@ -55,13 +55,6 @@
         <li>
           <p class="navbar-btn">
             <a href="{{ url_for('login') }}" class="btn btn-default">Log In</a>
-          </p>
-        </li>
-        {% endif %}
-        {% if request.path == '/login' %}
-        <li>
-          <p class="navbar-btn">
-            <a href="{{ url_for('register') }}" class="btn btn-default">Sign Up</a>
           </p>
         </li>
         {% endif %}
