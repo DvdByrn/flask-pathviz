@@ -1,11 +1,44 @@
 {% extends "base.html" %}
 {% block title %}Welcome{% endblock %}
 {% block content %}
-<div class="row">
-	<div class="col-md-offset-3 col-md-6">
-		<p>Welcome, {{ session['username'] }}!</p>
-		<br>
-		<p>DOCUMENTATION UNDER CONSTRUCTION.</p>
+<div class="jumbotron">
+	<div class="container">
+		<h2>Welcome to Metabolic Modeling Visualizer!</h2>
+		<p>
+		<b>Metabolic Modeling Visualizer</b> is a web-based tool for visualizing biological pathways. It is a great way to contextualize biological datasets.
+		</p>
 	</div>
+</div>
+<div class="container">
+    <h2><b>Getting started</b></h2>
+	<div class="row">
+		<div class="col-lg-12">
+            <h3>View pathway maps</h3>
+            <ul>
+            <li><p>Choose "<b>Map</b>" in the menu-bar above. This will open the Map Viewer with metabolic pathway maps for <i>E.coli</i> model iJO1366.</p></li>
+			<li><p>View, zoom and pan a map using the toolbar located on the left-hand side of the Map Viewer.</p></li>
+			</ul>
+
+            <h3>Change between different pathway maps</h3>
+            <ul>
+            <li><p>Switch between pathway maps using the drop-down located in the lower right-hand corner of the Map Viewer.</p>
+            </li>
+            </ul>
+
+            <h3>Load flux data onto maps</h3>
+            <ul>
+            <li><p>Flux data in CSV file-format can superimposed on a map using the Data Menu.</p></li>
+            <li><p>Click "<b>Load flux data</b>" and choose the CSV file to be uploaded.</p></li>
+            <li><p>To clear the flux data, click "<b>Clear flux data</b>" in the Data Menu.</p>
+            </li>
+            </ul>
+
+            <h3>Questions & feedback</h3>
+            <ul>
+            <li><p>Please email questions and feedback to <a href="mailto:info@pyramidpyramidtechnology.com">info@pyramidpyramidtechnology.com</a>.</p>
+            </li>
+            </ul>
+        </div>
+    </div>
 </div>
 {% endblock %}
