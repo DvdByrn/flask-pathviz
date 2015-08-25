@@ -25,11 +25,18 @@
     <script type="text/javascript">
       window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var n=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=(n?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";var o=document.getElementsByTagName("script")[0];o.parentNode.insertBefore(a,o);for(var r=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["clearEventProperties","identify","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=r(p[c])};
       
-      // Development
-      // heap.load("2176222856");
+      var productionHost = 'metviz.pyramidtechnology.com'; 
 
-      // Production
-      // heap.load("3119079687");
+      var devToken = "2176222856";
+      var prodToken = "3119079687";
+
+      /* If the hostname is anything other than your production domain, initialize the heap analytics library with your Development Token */
+
+      if (window.location.hostname.toLowerCase().search(productionHost) < 0) {
+          heap.load(devToken);
+      } else {
+          heap.load(prodToken);
+      }
     </script>
 
     <meta charset="utf-8"/>
