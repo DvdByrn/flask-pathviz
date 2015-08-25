@@ -70,6 +70,13 @@
           </p>
         </li>
         {% endif %}
+        {% if request.path == '/login' %}
+        <li>
+          <p class="navbar-btn">
+            <a href="{{ url_for('register') }}" class="btn btn-default">Sign Up</a>
+          </p>
+        </li>
+        {% endif %}
        <li>
       {% endif %}
       </ul>
