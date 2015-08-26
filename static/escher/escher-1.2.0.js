@@ -14606,7 +14606,7 @@ define('Builder',['utils', 'BuildInput', 'ZoomContainer', 'Map', 'CobraModel', '
                                    }},
                           text: 'Load flux data',
                           id: 'data-menu-load-reaction-data' })
-                .button({ key: keys.clear_reaction_data,
+                .button({ key: keys.clear_flux_data,
                           text: 'Clear flux data',
                           id: 'data-menu-clear-reaction-data' })
 
@@ -14633,7 +14633,11 @@ define('Builder',['utils', 'BuildInput', 'ZoomContainer', 'Map', 'CobraModel', '
             if (data !== null)
                 this.set_gene_data(null);
 
+            window.fluxData = data;
             this.set_reaction_data(data);
+
+            // This is where a flux csv file was uploaded
+            // To do: save file.
         }
     }
 
@@ -14721,6 +14725,13 @@ define('Builder',['utils', 'BuildInput', 'ZoomContainer', 'Map', 'CobraModel', '
             load_reaction_data: { fn: null }, // defined by button
             clear_reaction_data: { target: this,
                                    fn: function() { this.set_reaction_data(null); }},
+            // Tailored function
+            clear_flux_data: {  target: this,
+                                fn: function() { 
+                                    this.set_reaction_data(null);
+                                    window.fluxData = null;
+                                }
+                             },
             load_metabolite_data: { fn: null }, // defined by button
             clear_metabolite_data: { target: this,
                                      fn: function() { this.set_metabolite_data(null); }},
