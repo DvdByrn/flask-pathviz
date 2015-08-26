@@ -16,24 +16,36 @@
             <h3>Viewing pathway maps</h3>
             <ul>
             <li><p>Choose "<b>Map</b>" in the menu-bar above. This will open the Map Viewer with metabolic pathway maps for <i>E.coli</i> model iJO1366.</p></li>
-            <p><img src="{{ url_for('static', filename='images/top_menu.png') }}" alt="images/top_menu.png"></p>
+            <p><img src="{{ url_for('static', filename='images/element_website_menu_top.png') }}" alt="images/element_website_menu_top.png"></p>
 			<li><p>Zoom-in, zoom-out and fit-to-page a map using the toolbar located on the left-hand side of the Map Viewer. Pan the map by clicking and holding the mouse-button, while moving the mouse.</p></li>
-            <p><img src="{{ url_for('static', filename='images/side_toolbar.png') }}" alt="images/side_toolbar.png"></p>
+            <p><img src="{{ url_for('static', filename='images/element_toolbar_side.png') }}" alt="images/element_toolbar_side.png"></p>
+            <li><p>Search for a particular metabolite or reaction on a pathway map, by typing "Ctrl+F" and typing the item's name. If multiple matches exist, use left- and right-arrows to cycle through the items.</p></li>
+            <p><img src="{{ url_for('static', filename='images/element_map_menu_top_find.png') }}" alt="images/element_map_menu_top_find.png"></p>
 			</ul>
 
             <h3>Changing between different pathway maps</h3>
             <ul>
             <li><p>Switch between pathway maps using the drop-down located in the lower right-hand corner of the Map Viewer.</p>
             </li>
-            <p><img src="{{ url_for('static', filename='images/lower_dropdown.png') }}" alt="images/lower_dropdown.png"></p>
+            <p><img src="{{ url_for('static', filename='images/element_map_dropdown_pathway.png') }}" alt="images/element_map_dropdown_pathway.png"></p>
             </ul>
 
             <h3>Loading flux data onto maps</h3>
             <ul>
-            <li><p>Flux data in CSV file-format can superimposed on a map using the Data Menu.</p></li>
+            <li><p>Flux data in CSV file-format can superimposed on a map using the Data Menu. Here is an example CSV file:</p></li>
+            <p><img src="{{ url_for('static', filename='images/file_data_flux.png') }}" alt="images/file_data_flux.png" height="150px"></p>
             <li><p>Click "<b>Load flux data</b>" and choose the CSV file to be uploaded.</p></li>
-            <img src="{{ url_for('static', filename='images/data_menu.png') }}" alt="images/data_menu.png">
+            <img src="{{ url_for('static', filename='images/element_map_menu_top_data.png') }}" alt="images/element_map_menu_top_data.png">
+            <li><p>Fluxes are superimposed onto the pathway map with reaction-arrows color-coded in proportion to the flux value: red for high flux, blue for low flux. Flux values are also shown next to the each reaction's ID. 
+            </p></li>
+            <p><img src="{{ url_for('static', filename='images/element_pathway_flux.png') }}" alt="images/element_pathway_flux.png" height="400px"></p>
             <li><p>To clear the flux data, click "<b>Clear flux data</b>" in the Data Menu.</p>
+            </li>
+            </ul>
+
+            <h3>Supported browsers</h3>
+            <ul>
+            <li><p>Google Chrome is recommended for optimal performance, but Map Viewer will also run in the latest versions of Firefox, Internet Explorer, and Safari.</p>
             </li>
             </ul>
 
