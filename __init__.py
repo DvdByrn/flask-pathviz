@@ -48,6 +48,6 @@ from logging import Formatter
 handler = RotatingFileHandler('error.log', maxBytes=10000, backupCount=1)
 handler.setLevel(logging.INFO)
 handler.setFormatter(Formatter(
-    '%(asctime)s %(levelname)s: %(message)s'
+    '%(asctime)s: %(message)s'
 ))
 app.logger.addHandler(handler)
