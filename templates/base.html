@@ -63,7 +63,7 @@
           </p>
         </li> 
       {% else %}
-        {% if request.path == '/register' %}
+        {% if request.path == '/signup' %}
         <li>
           <p class="navbar-btn">
             <a href="{{ url_for('login') }}" class="btn btn-default">Log In</a>
@@ -73,7 +73,7 @@
         {% if request.path == '/login' %}
         <li>
           <p class="navbar-btn">
-            <a href="{{ url_for('register') }}" class="btn btn-default">Sign Up</a>
+            <a href="{{ url_for('signup') }}" class="btn btn-default">Sign Up</a>
           </p>
         </li>
         {% endif %}

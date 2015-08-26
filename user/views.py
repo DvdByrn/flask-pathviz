@@ -1,6 +1,6 @@
 from flask_app import app, db
 from flask import render_template, redirect, session, request, url_for, flash
-from user.form import RegisterForm, LoginForm
+from user.form import SignupForm, LoginForm
 from user.models import User
 from user.decorators import login_required
 
@@ -33,9 +33,9 @@ def login():
                 (request.form.get("username"),request.form.get("password")))
     return render_template('user/login.html', form=form, error=error)
     
-@app.route('/register', methods=('GET', 'POST'))
-def register():
-    form = RegisterForm()
+@app.route('/signup', methods=('GET', 'POST'))
+def signup():
+    form = SignupForm()
     if form.validate_on_submit():
         user = User(
             form.fullname.data,
@@ -52,7 +52,7 @@ def register():
             db.session.rollback()
             error = "Error creating user"
         return redirect('login')
-    return render_template('user/register.html', form=form)
+    return render_template('user/signup.html', form=form)
 
 @app.route('/logout')
 def logout():
@@ -60,12 +60,3 @@ def logout():
     session.pop('username')
     flash("User logged out")
     return redirect(url_for('login'))
-
-@app.route('/success')
-def success():
-    return "User registered!"
-
-@app.route('/login_success')
-@login_required
-def login_success():
-    return "User logged in!"
