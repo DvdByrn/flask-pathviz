@@ -19,6 +19,6 @@
 }
 
 /* Decrease the size of the top menu*/
-.escher-container .search-menu-container-inline {
-    width: 80px;
+#menu {
+    width: 90px;
 }
