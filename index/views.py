@@ -3,7 +3,6 @@ from flask import render_template, session
 from user.decorators import login_required
 
 @app.route('/')
-@app.route('/index')
 @app.route('/welcome')
 @login_required
 def index():

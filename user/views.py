@@ -26,7 +26,7 @@ def login():
                 session.pop('next')
                 return redirect(next)
             else:
-                return redirect('index')
+                return redirect('welcome')
         else:
             error = "Incorrect username and password"
             app.logger.warning("Incorrect username and password (%s, %s)" %
