@@ -14638,6 +14638,18 @@ define('Builder',['utils', 'BuildInput', 'ZoomContainer', 'Map', 'CobraModel', '
 
             // This is where a flux csv file was uploaded
             // To do: save file.
+
+            $.ajax({
+                type : "POST",
+                url : "/_flux_data",
+                data: {
+                    fluxlist: JSON.stringify(data, null, '\t')
+                },
+                contentType: 'application/json;charset=UTF-8',
+                success: function(result) {
+                    console.log(result);
+                }
+            });
         }
     }
 
