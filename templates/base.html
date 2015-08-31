@@ -6,21 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %}{% endblock %} - Metabolic Modeling Visualizer</title>
 
-    <!-- Bootstrap css file -->
-    <link href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    {% assets "js_all" %}
+      <script type="text/javascript" src="{{ ASSET_URL }}"></script>
+    {% endassets %}
 
-    <!-- Custom css file -->
-    <link href="{{ url_for('static', filename='css/custom.css') }}" rel="stylesheet" type="text/css" >
-
-    <!-- Escher css file -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='escher/builder-1.2.0.css') }}"/>
-
-    <!-- d3 js file -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
-
-    <!-- mb_map files -->
-    <script src="{{ url_for('static', filename='mb_map.js') }}"></script>
-    <link rel="stylesheet" href="{{ url_for('static', filename='mb_map.css') }}"/>
+    {% assets "css_all" %}
+      <link rel="stylesheet" type="text/css" href="{{ ASSET_URL }}" />
+    {% endassets %}
 
     <script type="text/javascript">
       window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var n=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=(n?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";var o=document.getElementsByTagName("script")[0];o.parentNode.insertBefore(a,o);for(var r=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["clearEventProperties","identify","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=r(p[c])};
@@ -95,14 +87,5 @@
       </footer>
     </div>
 
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="{{ url_for('static', filename='js/jquery-2.1.4.min.js') }}"></script>
-
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="{{ url_for('static', filename='bootstrap/js/bootstrap.min.js') }}"></script>
-
-    <!-- Escher js file -->
-    <script src="{{ url_for('static', filename='escher/escher-1.2.0.js') }}"></script>
   </body>
 </html>
