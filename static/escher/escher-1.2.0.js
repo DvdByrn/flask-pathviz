@@ -14637,17 +14637,17 @@ define('Builder',['utils', 'BuildInput', 'ZoomContainer', 'Map', 'CobraModel', '
             this.set_reaction_data(data);
 
             // This is where a flux csv file was uploaded
-            // To do: save file.
-
+            // The data are sent to the server side.
             $.ajax({
                 type : "POST",
                 url : "/_flux_data",
-                data: {
-                    fluxlist: JSON.stringify(data, null, '\t')
-                },
+                data: JSON.stringify(window.fluxData, null, '\t'),
                 contentType: 'application/json;charset=UTF-8',
                 success: function(result) {
-                    console.log(result);
+                    //console.log(result);
+                },
+                error: function(error) {
+                    console.log(error);
                 }
             });
         }
