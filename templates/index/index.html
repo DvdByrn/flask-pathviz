@@ -13,6 +13,13 @@
     <h2><b>Getting started</b></h2>
 	<div class="row">
 		<div class="col-lg-12">
+
+            <h3>Supported browsers</h3>
+            <ul>
+            <li><p>Google Chrome is recommended for optimal performance, but this application can also be run on the latest versions of Firefox, Internet Explorer, and Safari browsers.</p>
+            </li>
+            </ul>
+
             <h3>Viewing pathway maps</h3>
             <ul>
             <li><p>Choose "<b>Map</b>" in the menu-bar above. This will open the Map Viewer with metabolic pathway maps for <i>E.coli</i> model iJO1366.</p></li>
@@ -36,16 +43,10 @@
             <p><img src="{{ url_for('static', filename='images/file_data_flux.png') }}" alt="images/file_data_flux.png" height="150px"></p>
             <li><p>Click "<b>Load flux data</b>" and choose the CSV file to be uploaded.</p></li>
             <img src="{{ url_for('static', filename='images/element_map_menu_top_data.png') }}" alt="images/element_map_menu_top_data.png">
-            <li><p>Fluxes are superimposed onto the pathway map with reaction-arrows color-coded in proportion to the flux value: red for high flux, blue for low flux. Flux values are also shown next to the each reaction's ID. 
+            <li><p>Fluxes are superimposed onto the pathway map with reaction-arrows color-coded in proportion to the flux value (red for high flux value, blue for low flux value). Flux values are also displayed next to the each reaction's ID. 
             </p></li>
             <p><img src="{{ url_for('static', filename='images/element_pathway_flux.png') }}" alt="images/element_pathway_flux.png" height="400px"></p>
-            <li><p>To clear the flux data, click "<b>Clear flux data</b>" in the Data Menu.</p>
-            </li>
-            </ul>
-
-            <h3>Supported browsers</h3>
-            <ul>
-            <li><p>Google Chrome is recommended for optimal performance, but Map Viewer will also run in the latest versions of Firefox, Internet Explorer, and Safari.</p>
+            <li><p>To clear the flux data from the map, click "<b>Clear flux data</b>" in the Data Menu.</p>
             </li>
             </ul>
 
