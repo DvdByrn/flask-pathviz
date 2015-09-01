@@ -12,7 +12,7 @@ manager.add_command('db', MigrateCommand)
 # Instantiate the server with the required flags.
 # Turn on debugger by default and reloader
 manager.add_command("runserver", Server(
-    use_debugger = True,
+    use_debugger = app.config['DEBUG'],
     use_reloader = True,
     host = '0.0.0.0')
 )
